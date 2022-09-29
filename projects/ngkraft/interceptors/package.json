@@ -1,0 +1,35 @@
+{
+  "name": "@ngkraft/interceptors",
+  "version": "1.0.0",
+  "peerDependencies": {
+    "@angular/common": "^14.2.0",
+    "@angular/core": "^14.2.0"
+  },
+  "dependencies": {
+    "tslib": "^2.3.0"
+  },
+  "keywords": [
+    "angular",
+    "angular 2",
+    "interceptors"
+  ],
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "bugs": {
+    "url": "https://github.com/ngkraft/interceptors/issue"
+  },
+  "homepage": "https://github.com/ngkraft/interceptors#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ngkraft/interceptors"
+  },
+  "schematics": "./schematics/collection.json",
+  "scripts": {
+    "build": "tsc -p tsconfig.schematics.json",
+    "copy:schemas": "cpx schematics/ng-add ../../../dist/ngkraft/interceptors/",
+    "copy:collection": "cpx schematics/collection.json ../../../dist/ngkraft/interceptors/schematics/",
+    "postbuild": "npm run copy:schemas && npm run copy:collection"
+  }
+}
